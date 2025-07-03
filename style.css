@@ -1,5 +1,10 @@
 body{
-    background-color: white;
+    background-image:url("imgBackground/voteImg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(5px);
+    
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -10,12 +15,13 @@ body{
 }
 
 .container{
-    background-color: rgb(253, 250, 171);
+    background-color: rgba(255, 255, 255, 0.782);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
-    animation: 
+    animation: cardAnimation 0.5s ease-in-out;
+    border: solid 2px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes cardAnimation {
@@ -30,7 +36,7 @@ body{
 }
 
 h1{
-    color:rgb(219, 15, 15)
+    color:rgb(219, 14, 14)
 }
 
 .poll{
@@ -44,8 +50,14 @@ h2{
     font-size: 24px;
 }
 
+.options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}   
+
 .option{
-    background-color: rgba(255, 255, 255, 0.368);
+    background-color: rgba(255, 255, 255, 0.56);
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -58,22 +70,49 @@ input[type="radio"] {
 
 label{
     display: inline-block;
-    background-color: white;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    border: none;
+    
 }
 
 .option{
-    color: rgb(56, 55, 55);
+    color: rgb(0, 0, 0);
     font-size: larger;
     border: none;
 
 }
 
 .option:hover{
-    background-color: rgb(255, 253, 253);
+    background-color: rgba(255, 253, 253, 0);
     color: rgb(0, 0, 0);
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+ 
+.option input[type="radio"]:checked + label {
+    background-color: rgb(239, 31, 31);
+    color: rgb(255, 251, 251);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.59);
+}
+
+button{
+    background-color: rgb(48, 212, 26);
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+button:hover{
+    background-color: rgb(28, 113, 17);
+    color: white;
+    font-weight:200;
 }
